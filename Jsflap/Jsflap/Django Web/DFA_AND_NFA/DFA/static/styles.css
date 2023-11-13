@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0e5d8; /* Color de fondo */
+    color: #3e4247; /* Color de texto */
+}
+.menu-option-container:hover {
+    transform: scale(1.1);
+}
+header {
+    background-color: #a7ccd1; /* Color de encabezado */
+    color: #3e4247;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+.button-group button {
+    margin: 5px 0;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 20px;
+}
+
+.canvas-container {
+    flex: 1;
+    border: 1px solid #ccc;
+    position: relative;
+    margin-right: 20px;
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    height: 100%; /* Ocupa el 100% del alto disponible */
+    box-sizing: border-box; /* Asegura que el borde esté incluido en el ancho */
+}
+
+
+canvas {
+    background-color: #d6ecf1; /* Color de fondo del lienzo */
+    cursor: crosshair;
+    border: 1px solid #8e7b72; /* Color del borde del lienzo */
+}
+
+.controls {
+    max-width: 300px;
+    margin: 0 auto; /* Centra el bloque de controles */
+    text-align: center; /* Centra el texto y los botones */
+    padding: 10px;
+    background-color: #d6ecf1; /* Fondo de los controles */
+    border: 1px solid #5f5344; /* Borde de los controles */
+}
+
+.checkboxes label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #3e4247; /* Color del texto de las etiquetas */
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    display: block;
+    color: #3e4247; /* Color del texto de las etiquetas */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #b2b598; /* Color de fondo del input */
+    color: #3e4247; /* Color del texto del input */
+    border: 1px solid #3e4247; /* Color del borde del input */
+}
+
+button {
+    background-color: #a7ccd1; /* Color de los botones */
+    color: #3e4247;
+    padding: 10px 20px;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+button:hover {
+    background-color: #8e7b72; /* Color al pasar el ratón sobre el botón */
+}
+
+button:disabled {
+    background-color: #3e4247; /* Color de botón deshabilitado */
+    cursor: not-allowed;
+}
+
+.active {
+    background-color: #57444b; /* Cambia este color al que desees */
+}
+
+.controls {
+    max-width: 300px;
+    margin: 0 auto; /* Centra el bloque de controles */
+    text-align: center; /* Centra el texto y los botones */
+    padding: 10px;
+    background-color: #d6ecf1; /* Fondo de los controles */
+    border: 1px solid #5f5344; /* Borde de los controles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkboxes label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #3e4247; /* Color del texto de las etiquetas */
+    text-align: left;
+}
+
+.checkboxes input {
+  
+    margin-bottom: 5px;
+}
+.checkboxes label,
+button {
+    width: 60%; /* Ocupan el 60% del espacio disponible */
+    margin-bottom: 10px; /* Espacio entre elementos */
+}
+
+.input-group {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    color: #3e4247; /* Color del texto de las etiquetas */
+    text-align: left;
+}
+
+.input-group input {
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.button-group button {
+    width: 48%;
+}
