@@ -2,12 +2,27 @@
 {% csrf_token %}
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
+        .custom-btn {
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .custom-btn:hover {
+            border-color:powderblue;
+            /* Color azul de Bootstrap, puedes cambiarlo según tus preferencias */
+            transform: scale(1.1);
+            /* Escala del 110%, ajusta según sea necesario */
+        }
+
         .menu-options {
             display: flex;
             justify-content: space-between;
@@ -16,7 +31,8 @@
         }
 
         .menu-option-container {
-            width: calc(30% - 20px); /* El 20px es para tener margen entre los elementos */
+            width: calc(30% - 20px);
+            /* El 20px es para tener margen entre los elementos */
             border: 2px solid #ccc;
             border-radius: 10px;
             margin: 10px;
@@ -24,8 +40,10 @@
             box-sizing: border-box;
             cursor: pointer;
             transition: transform 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregamos sombra */
-            background-color: #f9f9f9; /* Fondo blanco para contraste */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Agregamos sombra */
+            background-color: #f9f9f9;
+            /* Fondo blanco para contraste */
             display: flex;
             flex-direction: column;
         }
@@ -33,7 +51,8 @@
         .menu-option-title {
             font-size: 1.5em;
             margin: 10px;
-            color: #333333; /* Texto oscuro para contraste */
+            color: #333333;
+            /* Texto oscuro para contraste */
         }
 
         .divider {
@@ -44,13 +63,16 @@
             flex-grow: 1;
             padding: 10px;
             text-align: left;
-            background-color: #ffffff; /* Fondo blanco para contraste */
+            background-color: #ffffff;
+            /* Fondo blanco para contraste */
         }
 
         .menu-option-description {
             font-size: 1em;
-            font-family: 'Roboto', sans-serif; /* Cambiar la tipografía */
-            color: #555555; /* Texto un poco más claro para contraste */
+            font-family: 'Roboto', sans-serif;
+            /* Cambiar la tipografía */
+            color: #555555;
+            /* Texto un poco más claro para contraste */
         }
 
         .menu-option-container:hover {
@@ -58,9 +80,26 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Menú</h1>
+        <div class="d-flex">
+            <div class="col-4">
+                <h5>Logo de la uni</h5>
+            </div>
+            <div class="col-4">
+                <div>
+                    <h2 class="text-center  p-2">Proyecto Final Automatas</h2>
+                </div>
+            </div>
+            <div class="d-flex col-4 justify-content-end p-2">
+                <a href="http://127.0.0.1:8000/DFA/" class="btn btn-lg custom-btn">DFA</a>
+                <a href="http://127.0.0.1:8000/NFA/" class="btn btn-lg custom-btn">NFA</a>
+                <a href="http://127.0.0.1:8000/MT/" class="btn btn-lg custom-btn">Turing</a>
+                <a href="http://127.0.0.1:8000/" class="btn btn-lg custom-btn">Menu</a>
+            </div>
+
+        </div>
     </header>
     <main>
         <section class="menu-options">
@@ -68,24 +107,43 @@
                 <div class="menu-option-title">Autómata Finito Determinista</div>
                 <div class="divider"></div>
                 <div class="description-container">
-                    <div class="menu-option-description">Un DFA es un tipo de autómata finito que sigue un conjunto específico de reglas para procesar cadenas de entrada. Cada estado en un DFA tiene una transición definida para cada símbolo del alfabeto de entrada. A diferencia de un NFA, en un DFA no hay ambigüedad en las transiciones, lo que significa que siempre hay una única transición definida para cualquier símbolo en cualquier estado. Esto lo hace especialmente eficiente para aplicaciones en las que se necesita una decisión clara y sin ambigüedad.</div>
+                    <div class="menu-option-description">Un DFA es un tipo de autómata finito que sigue un conjunto
+                        específico de reglas para procesar cadenas de entrada. Cada estado en un DFA tiene una
+                        transición definida para cada símbolo del alfabeto de entrada. A diferencia de un NFA, en un DFA
+                        no hay ambigüedad en las transiciones, lo que significa que siempre hay una única transición
+                        definida para cualquier símbolo en cualquier estado. Esto lo hace especialmente eficiente para
+                        aplicaciones en las que se necesita una decisión clara y sin ambigüedad.</div>
                 </div>
             </div>
             <div class="menu-option-container" onclick="window.location.href='/NFA/'">
                 <div class="menu-option-title">Autómata Finito No Determinista</div>
                 <div class="divider"></div>
                 <div class="description-container">
-                    <div class="menu-option-description">Un NFA es otro tipo de autómata finito que puede tener múltiples transiciones posibles para un mismo símbolo en un estado dado. Esto significa que en un NFA, hay cierta ambigüedad en las transiciones y puede haber múltiples caminos para procesar una cadena de entrada. Los NFAs son especialmente útiles en situaciones donde la flexibilidad en las transiciones es esencial, como en la definición de gramáticas libres de contexto o en aplicaciones que involucran procesamiento de lenguajes naturales.</div>
+                    <div class="menu-option-description">Un NFA es otro tipo de autómata finito que puede tener
+                        múltiples transiciones posibles para un mismo símbolo en un estado dado. Esto significa que en
+                        un NFA, hay cierta ambigüedad en las transiciones y puede haber múltiples caminos para procesar
+                        una cadena de entrada. Los NFAs son especialmente útiles en situaciones donde la flexibilidad en
+                        las transiciones es esencial, como en la definición de gramáticas libres de contexto o en
+                        aplicaciones que involucran procesamiento de lenguajes naturales.</div>
                 </div>
             </div>
             <div class="menu-option-container" onclick="window.location.href='/MT/'">
                 <div class="menu-option-title">Máquina de Turing </div>
                 <div class="divider"></div>
                 <div class="description-container">
-                    <div class="menu-option-description">Una Máquina de Turing es un modelo teórico de cómputo que puede simular el comportamiento de cualquier algoritmo computacional. Consiste en una cinta infinita dividida en casillas donde se pueden escribir y leer símbolos, y una cabeza de lectura/escritura que puede moverse a lo largo de la cinta. Las Máquinas de Turing pueden resolver una amplia variedad de problemas computacionales y son fundamentales en la teoría de la computación para analizar la complejidad y posibilidades de los algoritmos.</div>
+                    <div class="menu-option-description">Una Máquina de Turing es un modelo teórico de cómputo que puede
+                        simular el comportamiento de cualquier algoritmo computacional. Consiste en una cinta infinita
+                        dividida en casillas donde se pueden escribir y leer símbolos, y una cabeza de lectura/escritura
+                        que puede moverse a lo largo de la cinta. Las Máquinas de Turing pueden resolver una amplia
+                        variedad de problemas computacionales y son fundamentales en la teoría de la computación para
+                        analizar la complejidad y posibilidades de los algoritmos.</div>
                 </div>
             </div>
         </section>
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
 </html>
