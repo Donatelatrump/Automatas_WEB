@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #f0e5d8; /* Color de fondo */
+    background-color:aliceblue; /* Color de fondo */
     color: #3e4247; /* Color de texto */
 }
 .menu-option-container:hover {

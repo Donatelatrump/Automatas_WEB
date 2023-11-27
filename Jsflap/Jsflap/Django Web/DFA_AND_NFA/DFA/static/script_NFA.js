@@ -607,6 +607,8 @@ function obtenerEstadoYConexiones() {
 function eliminarEstadoYConexiones(estado) {
     let numeroEstado = estado.datos.numeroEstado;
     liberarNumeroEstado(numeroEstado);
+    let indiceEstado = objetos.indexOf(estado);
+    let coorde = estado.getAbsolutePosition();
     if (indiceEstado !== -1) {
         // Almacenar las coordenadas del estado
         let estadoX = coorde.x;
