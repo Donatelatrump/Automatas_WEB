@@ -1,0 +1,1 @@
+web: gunicorn DFA_AND_NFA.wsgi:application
